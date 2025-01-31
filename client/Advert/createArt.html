@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Предложить картину</title>
+    <link rel="stylesheet" href="/Advert/createArt.css">
+</head>
+<body>
+    <header>
+        <h1>Предложить картину</h1>
+    </header>
+    <button id="backButton">Назад</button>
+    <div class="container">
+        <form id="adForm">
+            <label for="title">Название:</label>
+            <input type="text" id="title" name="title" required>
+            <label for="author">Автор картины:</label>
+            <label for="commit">(Оставьте поле пустым, если автор отсутствует)</label>
+            <label for="commit">(Если авторов несколько, перечислите их через запятую)</label>
+            <input type="text" id="author" name="author">
+            <label for="photo">Прикрепить фото:</label>
+            <input type="file" id="photo" name="photo" accept="image/*" required>
+            <label for="description">Описание картины (при наличии):</label>
+            <textarea id="description" name="description" rows="4" ></textarea>
+            <label for="date">Дата создания картины (укажите только год):</label>
+            <input type="string" id="date" name="date" >
+            <label for="location">Место написания картины (при наличии):</label>
+            <input type="text" id="location" name="location" >
+            
+          <label>Выберите жанр картины</label>
+             <select id="stylesList" required>
+              <option value="Не указан" selected>Не указан</option>
+              <option value="Портрет">Портрет</option>
+              <option value="Пейзаж">Пейзаж</option>
+              <option value="Исторический">Исторический</option>
+              <option value="Натюрморт">Натюрморт</option>
+              <option value="Бытовой">Бытовой</option>
+              <option value="Анималистичный">Анималистичный</option>
+            </select>
+            <button type="submit">Добавить</button>
+        </form>
+    </div> 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/compressorjs/dist/compressor.min.js"></script>
+    <script src="/Advert/createArt.js"></script>
+</body>
+</html>
