@@ -22,6 +22,15 @@
                     <input type="text" id="name" name="name" required readonly>
                     <label for="phone">Номер телефона:</label>
                     <input type="text" id="phone" name="phone" required readonly>
+                    <div id="roleContainer" style="display: none;">
+                      <label for="roleSelect">Роль:</label>
+                      <select id="roleSelect">
+                          <option value="user">Пользователь</option>
+                          <option value="moderator">Модератор</option>
+                          <option value="admin">Администратор</option>
+                      </select>
+                  </div>
+                  
                     <div id="passwordFields" style="display: none;">
                         <label for="newPassword">Новый пароль:</label>
                         <input type="password" id="newPassword" name="newPassword">
