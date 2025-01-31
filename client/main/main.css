@@ -1,0 +1,150 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #6d8eb0;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.container {
+  display: flex;
+  margin: 20px;
+}
+
+aside {
+  width: 200px;
+  background-color: #3a699b;
+  margin-right: 20px;
+}
+
+aside nav a {
+  display: block;
+  color: rgb(187, 198, 223);
+  text-decoration: none;
+  margin: 10px 0;
+}
+
+main {
+  flex: 1;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.controls {
+  margin-top: 10px;
+  text-align: right;
+}
+
+.controls button {
+  margin-left: 10px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #3a699b;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Основной контейнер */
+#artContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 30px; /* Разделяем блоки по жанрам */
+  width: 100%;
+  padding: 20px;
+  align-items: center;
+}
+
+/* Контейнер жанра */
+.style-box {
+  width: 90%;
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Заголовок жанра */
+.style-box h3 {
+  margin: 0;
+  font-size: 18px;
+  color: #333;
+}
+
+/* Горизонтальный скролл для картин */
+.scroll-container {
+  display: flex;
+  overflow-x: auto;
+  gap: 15px;
+  padding-bottom: 10px;
+  scroll-behavior: smooth; /* Плавный скролл */
+}
+
+.scroll-container::-webkit-scrollbar {
+  height: 10px;
+}
+
+.scroll-container::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 8px;
+}
+
+.scroll-container::-webkit-scrollbar-thumb:hover {
+  background: #999;
+}
+
+/* Карточка картины */
+.ad {
+  flex: 0 0 auto;
+  width: 200px; /* Увеличен размер */
+  height: 250px;
+  text-align: center;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.ad:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Изображение картины */
+.ad img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 8px;
+}
+
+/* Заголовок картины */
+.ad-title {
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+  margin: 0;
+}

@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Художественная галерея</title>
+    <link rel="stylesheet" type="text/css" href="/main/main.css">
+</head>
+<body>
+    <header>
+        <h1>Художественная галерея</h1>
+    </header>
+    <div class="container">
+      <aside>
+        <nav id="userNav">
+          <a id="loginRegisterLink" href="/login">Вход и Регистрация</a>
+          <a id="profileLink" href="/myProfile?userId=" style="display:none;">Профиль</a>
+            <a id="AddCreate" href="/createArt">Предложить картины</a>
+            <!-- <a id="myAdsLink" href="/myArts" style="display:none;">Мои предложения</a> -->
+            <a id="logoutLink" href="#" style="display:none;">Выход</a>
+            <!-- Элементы для администратора -->
+            <div id="adminControls" style="display:none;">
+                <a href="/manageAccounts">Управление учетными записями</a>
+            </div>
+            <!-- Элементы для модератора -->
+            <div id="moderatorControls" style="display:none;">
+                <a href="/moderationAds">Модерация картин</a>
+            </div>
+        </nav>
+    </aside>
+    
+        <main>
+            <div class="controls">
+                <input type="text" id="searchInput" placeholder="Поиск...">
+                <button id="searchButton">Поиск</button>
+                <button id="resetButton">Сброс</button>
+                <hr>
+                <label for="genreFilter">Фильтр по жанру:</label>
+      <select id="genreFilter">
+          <option value="">Все жанры</option>
+          <option value="Портрет">Портрет</option>
+          <option value="Пейзаж">Пейзаж</option>
+          <option value="Исторический">Исторический</option>
+          <option value="Натюрморт">Натюрморт</option>
+          <option value="Бытовой">Бытовой</option>
+          <option value="Анималистичный">Анималистичный</option>
+      </select>
+      <button id="filter">Фильтровать</button>
+      <hr>
+            </div>
+            <div class="container" id="artContainer">
+            </div>
+        </main>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="/main/main.js"></script>
+</body>
+</html>
