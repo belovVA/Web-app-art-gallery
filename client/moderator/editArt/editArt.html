@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Изменение данных</title>
+    <link rel="stylesheet" href="/moderator/editArt/editArt.css">
+</head>
+<body>
+    <header>
+        <h1>Изменение данных</h1>
+    <button id="backButton">Назад</button>
+    </header>
+
+    <div class="container">
+        <div class="ad-detail">
+            <div class="image-container">
+                <img id="artImage" src="" alt="Фото объявления">
+                <input type="file" id="adImageUpload" style="display:none;">
+            </div>
+            <div class="details-container">
+              <h2 id="artTitle" class="editable">Название картины</h2>
+<p><strong>Год написания:</strong> <span id="artDate" class="editable"></span></p>
+<p><strong>Автор:</strong> <span id="artAuthor" class="editable"></span></p>
+<p><strong>Место написания:</strong> <span id="artLocation" class="editable"></span></p>
+<p><strong>Жанр:</strong> <span id="artStyle" class="editable">Без жанра</span></p>
+<p><strong>Описание:</strong> <span id="artDescription" class="editable">Описание картины.</span></p>
+  
+              <div class="buttons">
+                    <button id="editButton">Редактировать</button>
+                    <button id="saveButton" style="display:none;">Сохранить</button>
+                    <button id="cancelButton" style="display:none;">Отменить</button>
+                    <button id="deleteButton">Удалить</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="/moderator/editArt/editArt.js"></script>
+</body>
+</html>

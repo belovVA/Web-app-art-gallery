@@ -3,6 +3,7 @@ body {
   background-color: #f4f4f4;
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
 }
 
 header {
@@ -60,18 +61,15 @@ button:hover {
   background-color: #0056b3;
 }
 
+/* Основной контейнер */
 #artContainer {
   display: flex;
   flex-direction: column;
   gap: 30px; /* Разделяем блоки по жанрам */
   width: 100%;
-  max-width: 1500px; /* Задаём фиксированную максимальную ширину */
   padding: 20px;
   align-items: center;
-  overflow-x: auto; /* Добавляем горизонтальную прокрутку */
-  margin: 0 auto; /* Центрируем контейнер */
 }
-
 
 /* Контейнер жанра */
 .style-box {
@@ -93,20 +91,12 @@ button:hover {
   color: #333;
 }
 
-.scroll-container {
-  display: flex;
-  overflow-x: auto;
-  gap: 15px;
-  padding-bottom: 10px;
-  scroll-behavior: smooth; /* Плавный скролл */
-  max-width: 100%; /* Ограничиваем ширину родительским контейнером */
-}
 
 
+/* Скрываем горизонтальный скролл, если flex-wrap работает */
 .scroll-container::-webkit-scrollbar {
   height: 10px;
 }
-
 .scroll-container::-webkit-scrollbar-thumb {
   background: #ccc;
   border-radius: 8px;
@@ -115,12 +105,20 @@ button:hover {
 .scroll-container::-webkit-scrollbar-thumb:hover {
   background: #999;
 }
-
 /* Карточка картины */
+/* Обновляем стили для прокрутки */
+.scroll-container {
+  display: flex;
+  overflow-x: auto;
+  gap: 15px;
+  padding-bottom: 10px;
+  scroll-behavior: smooth; /* Плавная прокрутка */
+  width: 100%; /* Контейнер занимает всю ширину родителя */
+  box-sizing: border-box;
+}
+
 .ad {
-  flex: 0 0 auto;
-  width: 200px; /* Увеличен размер */
-  height: 250px;
+  flex: 0 0 250px; /* Фиксированная ширина карточек для создания прокрутки */
   text-align: center;
   border: 1px solid #ddd;
   border-radius: 8px;
@@ -130,7 +128,6 @@ button:hover {
   cursor: pointer;
   transition: transform 0.2s, box-shadow 0.2s;
 }
-
 .ad:hover {
   transform: scale(1.05);
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);

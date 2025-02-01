@@ -13,16 +13,16 @@ function loadAdDetail() {
       $('#adImage').attr('src', ad.photoUrl ? `../../uploads/${ad.photoUrl}` : '../../uploads/no-image-thumb.jpg');
 
       // Установка названия
-      $('#adTitle').text(ad.title || 'Название не указано');
+      $('#adTitle').text(ad.title || 'Название Без жанра');
 
       // Установка стиля
-      $('#adStyle').text(`Жанр: ${ad.style || 'Не указан'}`).show();
+      $('#adStyle').text(`Жанр: ${ad.style || 'Без жанра'}`).show();
 
       // Установка автора
       if (ad.author && ad.author.length > 0) {
           $('#adAuthor').text(`Автор: ${ad.author.join(', ')}`).show();
       } else {
-          $('#adAuthor').text('Автор: Не указан').show();
+          $('#adAuthor').text('Автор: Без жанра').show();
       }
 
       // Установка года написания

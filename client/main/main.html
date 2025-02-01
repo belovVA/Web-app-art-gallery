@@ -16,7 +16,6 @@
           <a id="loginRegisterLink" href="/login">Вход и Регистрация</a>
           <a id="profileLink" href="/myProfile?userId=" style="display:none;">Профиль</a>
             <a id="AddCreate" href="/createArt">Предложить картины</a>
-            <!-- <a id="myAdsLink" href="/myArts" style="display:none;">Мои предложения</a> -->
             <a id="logoutLink" href="#" style="display:none;">Выход</a>
             <!-- Элементы для администратора -->
             <div id="adminControls" style="display:none;">
@@ -24,8 +23,10 @@
             </div>
             <!-- Элементы для модератора -->
             <div id="moderatorControls" style="display:none;">
-                <a href="/moderationAds">Модерация картин</a>
-            </div>
+              <a href="/moderationArts">Модерация картин</a>
+              <a href="/myArts">Редактирование картин</a>
+          </div>
+          
         </nav>
     </aside>
     
@@ -38,6 +39,7 @@
                 <label for="genreFilter">Фильтр по жанру:</label>
       <select id="genreFilter">
           <option value="">Все жанры</option>
+          <option value="Без жанра">Без жанра</option>
           <option value="Портрет">Портрет</option>
           <option value="Пейзаж">Пейзаж</option>
           <option value="Исторический">Исторический</option>
