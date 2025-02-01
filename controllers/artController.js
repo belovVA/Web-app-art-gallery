@@ -182,7 +182,7 @@ const updateAdStatus = async (req, res) => {
   try {
       const ad = await Art.findByIdAndUpdate(id, { moderationStatus }, { new: true });
       if (!ad) {
-          return res.status(404).send('Announcement not found');
+          return res.status(404).send('Art not found');
       }
       res.json(ad);
   } catch (error) {
@@ -202,18 +202,15 @@ const getAdsModeration = async (req, res) => {
   }
 
   if (searchQuery) {
-    const searchDate = new Date(searchQuery);
-    if (!isNaN(searchDate)) {
-      // Filter by exact date
-      filter.date = searchDate;
-    } else {
-      // If searchQuery is not a valid date, perform other searches
-      filter.$or = [
-        { title: new RegExp(searchQuery, 'i') },
-        { description: new RegExp(searchQuery, 'i') },
-        { location: new RegExp(searchQuery, 'i') },
-      ];
-    }
+    filter.$or = [
+      { title: { $regex: searchQuery, $options: 'i' } },
+      {author : { $regex: searchQuery, $options: 'i' }},
+      { description: { $regex: searchQuery, $options: 'i' } },
+      { location: { $regex: searchQuery, $options: 'i' } },
+      { style: { $regex: searchQuery, $options: 'i' } },
+      {date: { $regex: searchQuery, $options: 'i' }}
+
+    ];
   }
 
   try {

@@ -68,12 +68,16 @@ const getProfile = async (req, res) => {
 
 const updateProfile = async (req, res) => {
   const userId = req.params.userId;
-  const { lastName, firstName, phone, password } = req.body;
+  const { lastName, firstName, phone, password, role } = req.body;
   let updatedProfile = { lastName, firstName, phone };
 
   if (password) {
       const hashedPassword = await bcrypt.hash(password, 10);
       updatedProfile.password = hashedPassword;
+  }
+
+  if (role) {
+      updatedProfile.role = role; // Обновление роли
   }
 
   try {
@@ -83,6 +87,7 @@ const updateProfile = async (req, res) => {
       res.status(500).send('Error updating user profile');
   }
 };
+
 
 const deleteProfile = async (req, res) => {
   const userId = req.params.userId;
