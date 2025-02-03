@@ -9,8 +9,8 @@ const artSchema = new mongoose.Schema({
     location: String,
     style: {
       type:String,
-      enum:['Без жанра', 'Портрет', 'Пейзаж', 'Исторический', 'Натюрморт', 'Бытовой', 'Анималистичный'],
-      default: 'Без жанра'
+      enum:['Смешанный жанр', 'Портрет', 'Пейзаж', 'Исторический', 'Натюрморт', 'Бытовой'],
+      default: 'Смешанный жанр'
     },
     userId: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
     moderationStatus: {

@@ -39,16 +39,30 @@ header {
   gap: 20px;
 }
 
+.menu-item-image {
+  width: 40%;
+  height: auto; /* Поддерживает пропорции изображения */
+  object-fit: cover; /* Сохраняет пропорции, если контейнер больше изображения */
+  display: block;
+  margin-bottom: 10px; /* Добавляем отступ снизу */
+  margin-right: 20px; /* Отступ справа для расстояния между изображением и текстом */
+  border-radius: 8px; /* Скругление углов */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Лёгкая тень для красоты */
+}
+
 .ad {
   background-color: #fff;
   padding: 20px;
   border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Лёгкая тень */
   width: 100%;
   box-sizing: border-box;
   display: flex;
   justify-content: center;
+  align-items: flex-start; /* Выравнивание по верху */
   margin-bottom: 20px;
+  gap: 20px; /* Расстояние между изображением и текстом */
+  border: 2px solid #d1d1d1; /* Добавление контура */
 }
 
 #adTitle {
@@ -68,13 +82,6 @@ header {
   margin-bottom: 10px;
 }
 
-.menu-item-image {
-  width: 40%;
-  height: 100%;
-  object-fit: cover; /* Сохраняет пропорции изображения */
-  display: block;
-  margin-bottom: 10px;
-}
 
 #backButton {
   margin-top: 20px;

@@ -64,6 +64,7 @@ $(document).ready(function() {
           success: function(response) {
               alert('Объявление успешно добавлено!');
               // Перенаправление на другую страницу или выполнение других действий
+              window.location.href = '/createArt'
           },
           error: function(error) {
               alert('Ошибка при добавлении объявления!');

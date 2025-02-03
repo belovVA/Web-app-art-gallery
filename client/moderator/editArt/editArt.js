@@ -65,13 +65,12 @@ function enableEditing() {
           // Выпадающий список жанров
           input = $(`
               <select id="stylesList" required>
-                  <option value="Без жанра">Без жанра</option>
+                  <option value="Смешанный жанр">Смешанный жанр</option>
                   <option value="Портрет">Портрет</option>
                   <option value="Пейзаж">Пейзаж</option>
                   <option value="Исторический">Исторический</option>
                   <option value="Натюрморт">Натюрморт</option>
                   <option value="Бытовой">Бытовой</option>
-                  <option value="Анималистичный">Анималистичный</option>
               </select>
           `)
               .val(span.text())
