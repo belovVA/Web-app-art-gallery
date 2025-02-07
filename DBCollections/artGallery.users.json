@@ -1,0 +1,55 @@
+[{
+  "_id": {
+    "$oid": "679a1531f5ab0cdc87080807"
+  },
+  "lastName": "2",
+  "firstName": "2",
+  "phone": "2",
+  "password": "$2a$10$vcrLcTA8Mq0frRc5MUQh6OPyTiZdICpztvZQxKw8rlFTpHus3wAAy",
+  "role": "user",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "679cc5aed9352ad2109a4acc"
+  },
+  "lastName": "Super",
+  "firstName": "admin",
+  "phone": "superadmin",
+  "password": "$2a$10$un7c7QrPDtBARjYnm8ZUb.Pb9M9XGjzqUu0jvwIAunO.vYXjV7a5G",
+  "role": "superadmin",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "679cca4874a4c825c2d44632"
+  },
+  "lastName": "moder",
+  "firstName": "moder",
+  "phone": "moder",
+  "password": "$2a$10$fCfvVPitiPvZkPAuZR3mgOfV/XaopqOBkbrA.AK.1188u9G5BI0AG",
+  "role": "moderator",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "679cd7855ecd50e29da38695"
+  },
+  "lastName": "admin",
+  "firstName": "admin",
+  "phone": "admin",
+  "password": "$2a$10$722708L4r7OT5QEhrYHbpujB.ybTvJFts3k1D9rUfqItY1VjWFnpq",
+  "role": "admin",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67a0bd0e606729c9787d37cc"
+  },
+  "lastName": "user",
+  "firstName": "user",
+  "phone": "user",
+  "password": "$2a$10$yM.7GMH60dgMqdiqLPbQeeeOiaBOMkqDWlRjY5uAU8u/BzZKBzjmy",
+  "role": "user",
+  "__v": 0
+}]
