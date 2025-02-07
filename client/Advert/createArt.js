@@ -12,7 +12,7 @@ $(document).ready(function() {
       window.location.href = '/main?userId=' + userId;
   });
 
-  // Отправка формы объявления
+  // Отправка формы картины
   $('#adForm').submit(function(event) {
       event.preventDefault();
 
@@ -62,12 +62,12 @@ $(document).ready(function() {
           data: JSON.stringify(adData),
           contentType: 'application/json',
           success: function(response) {
-              alert('Объявление успешно добавлено!');
+              alert('Картина успешно добавлено!');
               // Перенаправление на другую страницу или выполнение других действий
               window.location.href = '/createArt'
           },
           error: function(error) {
-              alert('Ошибка при добавлении объявления!');
+              alert('Ошибка при добавлении картины!');
           }
       });
   }

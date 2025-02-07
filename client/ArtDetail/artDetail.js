@@ -6,7 +6,7 @@ $(document).ready(function() {
     window.location.href = '../main/main.html';
 });
 
- // Функция для загрузки деталей объявления с сервера
+ // Функция для загрузки деталей картины с сервера
 function loadAdDetail() {
   $.get('/adDetail', { id: adId }, function(ad) {
       // Установка изображения
@@ -46,13 +46,13 @@ function loadAdDetail() {
           $('#adDescription').hide();
       }
   }).fail(function(error) {
-      alert('Ошибка при загрузке деталей объявления');
+      alert('Ошибка при загрузке деталей картины');
       console.error('Error fetching ad details:', error);
   });
 }
 
 
 
-  // Изначальная загрузка деталей объявления
+  // Изначальная загрузка деталей картины
   loadAdDetail();
 });

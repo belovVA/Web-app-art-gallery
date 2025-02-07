@@ -9,7 +9,7 @@ $(document).ready(function() {
     window.location.href = 'moderationArts?';
 });
 
-  // Функция для получения HTML кода для деталей объявления
+  // Функция для получения HTML кода для деталей картины
   function getAdDetailHTML(ad) {
     const adContainer = document.createElement('div');
     adContainer.classList.add('ad-detail');
@@ -81,7 +81,7 @@ function updateModerationStatus(adId, status) {
   })
   .then(data => {
     // console.log('Status updated:', data);
-    // loadAdDetail(); // Обновляем детали объявления после изменения статуса
+    // loadAdDetail(); // Обновляем детали картины после изменения статуса
     window.location.href = '/moderationArts';
   })
   .catch(error => {
@@ -89,11 +89,11 @@ function updateModerationStatus(adId, status) {
   });
 }
 
-  // Функция для загрузки деталей объявления с сервера
+  // Функция для загрузки деталей картины с сервера
   function loadAdDetail() {
       const container = document.getElementById('adDetailContainer');
       container.innerHTML = ''; // Очищаем контейнер перед добавлением новых данных
-      // console.log("Попытка загрузить детали объявления");
+      // console.log("Попытка загрузить детали картины");
 
       fetch(`/adDetail?id=${adId}`)
           .then(response => {
@@ -132,6 +132,6 @@ function updateModerationStatus(adId, status) {
 
   }
 
-  // Изначальная загрузка деталей объявления
+  // Изначальная загрузка деталей картины
   loadAdDetail();
 });

@@ -3,7 +3,7 @@ $(document).ready(function() {
   const adId = urlParams.get('adId');
   let originalAdData = {};
 
-  // Функция для загрузки деталей объявления с сервера
+  // Функция для загрузки деталей картины с сервера
   function loadAdDetail() {
 
     $('#backButton').click(function() {
@@ -34,18 +34,18 @@ $(document).ready(function() {
   }
 
   function deleteAd() {
-    if (confirm('Вы уверены, что хотите удалить это объявление?')) {
+    if (confirm('Вы уверены, что хотите удалить это Картина?')) {
         $.ajax({
             url: '/deleteAd',
             method: 'DELETE',
             contentType: 'application/json',
             data: JSON.stringify({ id: adId }),
             success: function(response) {
-                alert('Объявление удалено');
+                alert('Картина удалено');
                 window.location.href = '/myArts';
             },
             error: function(error) {
-                alert('Ошибка при удалении объявления');
+                alert('Ошибка при удалении картины');
                 console.error('Error deleting ad:', error);
             }
         });
@@ -158,6 +158,6 @@ function saveChanges() {
   $('#cancelButton').click(cancelChanges);
   $('#deleteButton').click(deleteAd);
 
-  // Изначальная загрузка деталей объявления
+  // Изначальная загрузка деталей картины
   loadAdDetail();
 });

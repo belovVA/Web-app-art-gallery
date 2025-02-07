@@ -11,7 +11,7 @@ $(document).ready(function() {
             $('#adsContainer').append(adContainer);
         });
     }).fail(function(error) {
-        alert('Ошибка при загрузке объявлений');
+        alert('Ошибка при загрузке картин');
         console.error('Error fetching ads:', error);
     });
     
@@ -113,6 +113,6 @@ $(document).ready(function() {
   }
 
 
-  // Изначальная загрузка объявлений с первоначальным фильтром
+  // Изначальная загрузка картин с первоначальным фильтром
   loadAds('Watching');
 });

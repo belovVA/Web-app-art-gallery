@@ -16,10 +16,10 @@ const createArt = async (req, res) => {
           photoUrl
       });
       await announcement.save();
-      res.status(201).send('Объявление успешно добавлено!');
+      res.status(201).send('Картина успешно добавлено!');
   } catch (error) {
-      console.error('Ошибка при добавлении объявления:', error);
-      res.status(500).send('Ошибка при добавлении объявления');
+      console.error('Ошибка при добавлении картины:', error);
+      res.status(500).send('Ошибка при добавлении картины');
   }
 };
 
@@ -28,7 +28,7 @@ const getAdDetail = async (req, res) => {
   try {
       const ad = await Art.findById(adId);
       if (!ad) {
-          return res.status(404).send('Объявление не найдено');
+          return res.status(404).send('Картина не найдено');
       }
 
       const adDetail = {
@@ -38,7 +38,7 @@ const getAdDetail = async (req, res) => {
       res.json(adDetail);
   } catch (error) {
       console.error(error);
-      res.status(500).send('Ошибка при получении объявления');
+      res.status(500).send('Ошибка при получении картины');
   }
 };
 
@@ -58,8 +58,8 @@ const updateAd = async (req, res) => {
       }, { new: true });
       res.json(updatedAd);
   } catch (error) {
-      console.error('Ошибка при обновлении объявления:', error);
-      res.status(500).send('Ошибка при обновлении объявления');
+      console.error('Ошибка при обновлении картины:', error);
+      res.status(500).send('Ошибка при обновлении картины');
   }
 };
 
@@ -70,13 +70,13 @@ const deleteAd = async (req, res) => {
       const ad = await Art.findById(id);
       if (ad) {
           await Art.findByIdAndDelete(id);
-          res.status(200).send({ message: 'Объявление успешно удалено' });
+          res.status(200).send({ message: 'Картина успешно удалено' });
       } else {
-          res.status(404).send({ message: 'Объявление не найдено' });
+          res.status(404).send({ message: 'Картина не найдено' });
       }
   } catch (error) {
-      console.error('Ошибка при удалении объявления:', error);
-      res.status(500).send('Ошибка при удалении объявления');
+      console.error('Ошибка при удалении картины:', error);
+      res.status(500).send('Ошибка при удалении картины');
   }
 };
 
@@ -112,8 +112,8 @@ const getUserAds = async (req, res) => {
 
       res.json(groupedAds);
   } catch (error) {
-      console.error('Ошибка при получении объявлений:', error);
-      res.status(500).send('Ошибка при получении объявлений');
+      console.error('Ошибка при получении картин:', error);
+      res.status(500).send('Ошибка при получении картин');
   }
 };
 
@@ -153,7 +153,7 @@ const getAds = async (req, res) => {
     // Получение данных с учётом фильтров
     const ads = await Art.find(filter).sort(sortByStyle ? { style: 1 } : {});
     
-    // Группировка объявлений по статусу модерации
+    // Группировка картин по статусу модерации
     const groupedAds = ads.reduce((acc, ad) => {
       const status = ad.moderationStatus;
       if (!acc[status]) {
@@ -166,8 +166,8 @@ const getAds = async (req, res) => {
     // Отправка данных клиенту
     res.json(groupedAds);
   } catch (error) {
-    console.error('Ошибка при получении объявлений:', error);
-    res.status(500).send('Ошибка при получении объявлений');
+    console.error('Ошибка при получении картин:', error);
+    res.status(500).send('Ошибка при получении картин');
   }
 };
 
@@ -186,8 +186,8 @@ const updateAdStatus = async (req, res) => {
       }
       res.json(ad);
   } catch (error) {
-      console.error('Ошибка при обновлении статуса объявления:', error);
-      res.status(500).send('Ошибка при обновлении статуса объявления');
+      console.error('Ошибка при обновлении статуса картины:', error);
+      res.status(500).send('Ошибка при обновлении статуса картины');
   }
 };
 
@@ -217,8 +217,8 @@ const getAdsModeration = async (req, res) => {
       const ads = await Art.find(filter);
       res.json(ads);
   } catch (error) {
-      console.error('Ошибка при получении объявлений:', error);
-      res.status(500).send('Ошибка при получении объявлений');
+      console.error('Ошибка при получении картин:', error);
+      res.status(500).send('Ошибка при получении картин');
   }
 };
 
